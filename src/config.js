@@ -1,7 +1,8 @@
 import { get_runtime } from "./util.js"
 
 let OVERSEAS = globalThis?.Deno?.env?.get("OVERSEAS") || globalThis?.process?.env?.OVERSEAS
-const YT_API = globalThis?.Deno?.env?.get("YT_API") || globalThis?.process?.env?.YT_API || 'https://xiaoneng.ml/meting/api'
+const YT_API = 'https://xiaoneng.ml/meting/api'
+console.log('YT_API', YT_API)
 const runtime = get_runtime()
 
 if (['cloudflare', 'vercel'].includes(runtime)) OVERSEAS = true
