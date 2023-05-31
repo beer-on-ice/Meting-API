@@ -1,3 +1,4 @@
+import { indexpage } from './src/indexpage.js'
 import { handler } from './src/template.js'
 import config from './src/config.js'
 import api from './src/service/api.js'
@@ -10,7 +11,7 @@ const app = new Hono()
 app.use('*', cors())
 app.use('*', logger())
 app.get('/api', api)
-app.get('/', (c) => c.text('你好！访问/test以测试。'))
+app.get('/', indexpage)
 app.get('/test', handler)
 
 serve({
